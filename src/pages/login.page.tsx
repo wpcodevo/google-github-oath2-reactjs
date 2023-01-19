@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import GitHubLogo from "../assets/github.svg";
 import GoogleLogo from "../assets/google.svg";
-import { getGitHubUrl } from "../utils/getGithubUrl";
 import { getGoogleUrl } from "../utils/getGoogleUrl";
 import { object, string, TypeOf } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -168,10 +167,11 @@ const LoginPage = () => {
             <a
               className="px-7 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
               style={{ backgroundColor: "#55acee" }}
-              href={getGitHubUrl(from)}
+              href="#!"
               role="button"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
+              onClick={() => alert("Only Google OAuth2 is implemented")}
             >
               <img
                 className="pr-2"

@@ -37,16 +37,30 @@ const RegisterPage = () => {
           method: "POST",
           credentials: "include",
           body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       if (!response.ok) {
         throw await response.json();
       }
 
+      toast.success("Account created successfully", {
+        position: "top-right",
+      });
       store.setRequestLoading(false);
       navigate("/login");
     } catch (error: any) {
       store.setRequestLoading(false);
+      if (error.error) {
+        error.error.forEach((err: any) => {
+          toast.error(err.message, {
+            position: "top-right",
+          });
+        });
+        return;
+      }
       const resMessage =
         (error.response &&
           error.response.data &&

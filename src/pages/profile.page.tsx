@@ -27,6 +27,14 @@ const ProfilePage = () => {
       store.setAuthUser(user);
     } catch (error: any) {
       store.setRequestLoading(false);
+      if (error.error) {
+        error.error.forEach((err: any) => {
+          toast.error(err.message, {
+            position: "top-right",
+          });
+        });
+        return;
+      }
       const resMessage =
         (error.response &&
           error.response.data &&

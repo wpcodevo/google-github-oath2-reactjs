@@ -5,5 +5,5 @@ export interface IUser {
   role: string;
   photo: string;
   provider: string;
-  otp_enabled: string;
+  verified: boolean;
 }

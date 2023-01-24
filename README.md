@@ -1,5 +1,7 @@
 # How to Implement Google and GitHub OAuth in React.js
 
+These articles will teach you how to set up GitHub and Google OAuth flow in React.js applications.
+
 ## How to Implement Google OAuth2 in React.js
 
 In this article, you'll learn how to implement Google OAuth2 in a React.js application, including creating a project in the Google API Console, configuring the application's client ID and redirect URI, and implementing the necessary code in the React application.
